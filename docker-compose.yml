@@ -1,9 +1,27 @@
 version: '3.7'
 
 services:
-  backend:
+  backendred:
     build:
       context: ./backend
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    depends_on:
+      - database
+  
+  backendblue:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    depends_on:
+      - database
+
+  front:
+    build:
+      context: ./front
       dockerfile: Dockerfile
     networks:
       - app-network
@@ -23,6 +41,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+      - "8080:8080"
     networks:
       - app-network
     depends_on:
