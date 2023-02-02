@@ -1,0 +1,11 @@
+- name: Run backend red
+  docker_container:
+    name: backendred
+    image: mariusar/backend
+    network_mode: app-network
+
+#- name: Run backend blue
+#  docker_container:
+#    name: backendblue
+#    image: mariusar/backend
+#    network_mode: app-network

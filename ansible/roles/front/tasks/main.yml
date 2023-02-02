@@ -1,0 +1,5 @@
+- name: Run Front
+  docker_container:
+    name: front
+    image: mariusar/front
+    network_mode: app-network

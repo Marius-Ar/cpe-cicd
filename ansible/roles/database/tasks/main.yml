@@ -1,0 +1,5 @@
+- name: Run HTTPD
+  docker_container:
+    name: database
+    image: mariusar/database
+    network_mode: app-network
